@@ -539,18 +539,9 @@ footer{background:#1e1f27;padding:56px 32px 28px}
   .stats-bar{padding:0}
   .kontakt{padding:52px 16px}
 
-  /* Hero – mobil: grauer Hintergrund ohne Bild */
-  .hero{background:var(--gray-light)}
-  .hero-noise{display:none}
+  /* Hero – mobil: identisch mit PC-Design (dunkler Hintergrund, kein Partnerbild) */
   .hero-left{padding:40px 16px 52px}
-  .hero h1{color:var(--dark)}
-  .hero-desc{color:var(--gray)!important}
-  .hero-eyebrow{color:var(--dark)}
-  .hero-eyebrow::before{background:var(--red)}
-  .hb-val{color:var(--dark)!important}
-  .hb-label{color:var(--gray)!important}
-  .hero-badge{border-left-color:var(--red)}
-  .btn-hero-ghost{color:var(--gray)!important;border-color:var(--gray-border)!important}
+  .hero-right{display:none!important}
   .hero-eyebrow{font-size:10.5px;letter-spacing:0.07em;margin-bottom:18px}
   .hero h1{font-size:1.9rem;margin-bottom:14px;line-height:1.12}
   .hero-desc{font-size:15px;margin-bottom:24px;color:rgba(255,255,255,0.65)}
@@ -761,7 +752,21 @@ footer{background:#1e1f27;padding:56px 32px 28px}
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#leistungen">Leistungen</a>
+  <div class="mm-portal" style="margin-top:0;margin-bottom:4px">
+    <div class="mm-portal-title">Leistungen</div>
+    <a class="mm-portal-link" href="bpo.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Business Process Outsourcing
+    </a>
+    <a class="mm-portal-link" href="gestaltungsberatung.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      Gestaltungsberatung
+    </a>
+    <a class="mm-portal-link" href="nachfolgeplanung.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      Nachfolgeplanung
+    </a>
+  </div>
   <a href="#mandanten">Für wen wir arbeiten</a>
   <a href="#kanzlei">Die Kanzlei</a>
   <a href="#partner">Die Partner</a>
