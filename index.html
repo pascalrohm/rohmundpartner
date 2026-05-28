@@ -497,36 +497,158 @@ footer{background:#1e1f27;padding:56px 32px 28px}
 .fade-d2{transition-delay:0.2s}
 .fade-d3{transition-delay:0.3s}
 
+/* ── TABLET (max 1100px) ── */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-right{display:none}
-  .hero-left{padding:72px 40px}
+  .hero-left{padding:72px 40px 80px}
   .leistungen-grid{grid-template-columns:1fr}
   .pcard{grid-template-columns:180px 1fr}
   .digital-inner{grid-template-columns:1fr}
-  .awards-inner{grid-template-columns:1fr}
+  .awards-inner{grid-template-columns:1fr;gap:40px}
   .awards-grid{grid-template-columns:1fr 1fr 1fr}
-  .kontakt-header{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+  .kontakt-header{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
   .mandanten-grid{grid-template-columns:1fr 1fr}
-  .kp-inner{grid-template-columns:1fr}
+  .kp-inner{grid-template-columns:1fr;gap:40px}
+  .kp-cards{max-width:100%}
+  .kanzlei-inner{grid-template-columns:1fr;gap:48px}
+  .partner-header{flex-direction:column;align-items:flex-start}
+  .partner-header-right p{text-align:left;max-width:100%}
 }
+
+/* ── MOBILE (max 768px) ── */
 @media(max-width:768px){
+  :root{--nav-h:64px}
+
+  /* Nav */
   .nav-center,.nav-phone{display:none}
   .hamburger{display:flex}
-  section{padding:64px 20px}
-  .hero-left{padding:56px 24px}
-  .hero h1{font-size:2.4rem}
-  .pcard{grid-template-columns:1fr;grid-template-rows:200px auto}
-  .pcard-photo{width:100%;height:200px}
-  .partner-grid{grid-template-columns:1fr}
-  .news-grid{grid-template-columns:1fr}
-  .awards-grid{grid-template-columns:1fr 1fr}
-  .standorte{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
-  .stats-bar-inner{grid-template-columns:repeat(3,1fr)}
-  .kanzlei-inner{grid-template-columns:1fr}
-  .topbar{flex-direction:column;gap:8px;padding:10px 20px}
+  .nav-inner{padding:0 16px}
+  .nav-logo img{height:32px}
+
+  /* Topbar */
+  .topbar{flex-direction:column;gap:6px;padding:8px 16px;text-align:center}
+  .topbar-text{display:none}
+
+  /* Sections */
+  section{padding:52px 16px}
+  .mandanten{padding:52px 16px}
+  .kundenportal{padding:52px 16px}
+  .awards{padding:52px 16px}
+  .stats-bar{padding:0}
+  .kontakt{padding:52px 16px}
+
+  /* Hero */
+  .hero-left{padding:40px 16px 52px}
+  .hero-eyebrow{font-size:10.5px;letter-spacing:0.07em;margin-bottom:18px}
+  .hero h1{font-size:1.9rem;margin-bottom:14px;line-height:1.12}
+  .hero-desc{font-size:15px;margin-bottom:24px;color:rgba(255,255,255,0.65)}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px}
+  .btn-hero{justify-content:center;padding:13px 20px;font-size:14px}
+  .btn-hero-ghost{padding:12px 0;font-size:13.5px;justify-content:center;border-bottom:none;color:rgba(255,255,255,0.5)}
+  .hero-badges{margin-top:28px;gap:10px}
+  .hb-label{font-size:9.5px}
+  .hb-val{font-size:12px}
+
+  /* Section typography */
+  .section-title{font-size:1.65rem;margin-bottom:14px}
+  .section-sub{font-size:14.5px;max-width:100%}
+  .section-label{font-size:10px}
+
+  /* Ticker */
+  .ticker{padding:10px 0}
+  .ticker-item{font-size:11px;padding:0 18px}
+
+  /* Leistungen */
+  .leistungen-header{flex-direction:column;gap:16px;margin-bottom:32px}
+  .leistungen-header > div:last-child{display:none}
+  .leistungen-grid{grid-template-columns:1fr;border-radius:8px}
+  .lcard{padding:28px 20px}
+  .lcard-title{font-size:1.2rem}
+  .lcard-items li{font-size:13px}
+
+  /* Stats bar */
+  .stats-bar-inner{grid-template-columns:1fr 1fr}
+  .sbi{padding:24px 16px}
+  .sbi-num{font-size:2rem}
+  .sbi-label{font-size:9.5px}
+
+  /* Mandanten */
+  .mandanten-header{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:32px}
+  .mandanten-header > p{text-align:left!important;max-width:100%!important;display:none}
+  .mandanten-grid{grid-template-columns:1fr;gap:1px}
+  .mcard{padding:22px 18px}
+  .mcard-title{font-size:1rem}
+  .mcard-desc{font-size:12.5px}
+
+  /* Kanzlei */
+  .kanzlei-inner{grid-template-columns:1fr;gap:36px}
+  .kanzlei-image img{height:280px;border-radius:8px}
+  .kanzlei-badge{bottom:-10px;right:10px;padding:14px 18px}
+  .kb-num{font-size:1.5rem}
+  .kb-label{font-size:9.5px}
+  .kanzlei-facts{grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+  .kfact{padding:14px}
+  .kfact-title{font-size:12.5px}
+  .kfact-desc{font-size:11px}
+
+  /* Partner */
+  .partner-header{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:28px}
+  .partner-header-right{display:none}
+  .partner-grid{grid-template-columns:1fr;gap:16px}
+  .pcard{grid-template-columns:1fr}
+  .pcard-photo{width:100%;height:220px;object-position:top center}
+  .pcard-body{padding:20px 18px}
+  .pcard-name{font-size:1.35rem}
+
+  /* Kundenportal */
+  .kp-inner{grid-template-columns:1fr;gap:32px}
+  .kp-cards{grid-template-columns:1fr;gap:12px;max-width:100%}
+  .kp-card{padding:22px 18px}
+  .kp-card-title{font-size:1.1rem}
+
+  /* Digital */
+  .digital-inner{gap:36px}
+  .datev-block{padding:24px 18px}
+  .datev-wordmark{font-size:1.8rem}
+  .datev-stats{grid-template-columns:repeat(3,1fr)}
+  .dfeat{flex-direction:column;gap:10px;padding:14px}
+
+  /* Awards */
+  .awards-inner{grid-template-columns:1fr;gap:28px}
+  .awards-grid{grid-template-columns:1fr;gap:12px}
+  .award-card{padding:18px}
+
+  /* News */
+  .news-grid{grid-template-columns:1fr;gap:14px}
+  .news-header{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:28px}
+
+  /* Kontakt */
+  .kontakt-header{grid-template-columns:1fr;gap:28px;margin-bottom:32px}
+  .kontakt-cta{padding:13px 20px;font-size:14px;justify-content:center;width:100%}
+  .standorte{grid-template-columns:1fr;gap:12px}
+  .standort{padding:20px}
+  .standort-city{font-size:1.25rem;margin-bottom:12px}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  footer{padding:40px 16px 24px}
+
+  /* Mobile menu */
+  .mobile-menu{padding:16px}
+  .mm-portal{margin-top:8px}
+}
+
+/* ── SMALL PHONES (max 480px) ── */
+@media(max-width:480px){
+  .hero h1{font-size:1.65rem}
+  .kanzlei-facts{grid-template-columns:1fr}
+  .stats-bar-inner{grid-template-columns:1fr 1fr}
+  .datev-stats{grid-template-columns:1fr 1fr}
+  .pcard-tags{gap:4px}
+  .pcard-tag{font-size:11px;padding:3px 10px}
 }
 </style>
 </head>
@@ -703,7 +825,7 @@ footer{background:#1e1f27;padding:56px 32px 28px}
           <li>Betriebswirtschaftliche Auswertungen</li>
           <li>Vertretung von Mandanteninteressen gegenüber dem Finanzamt</li>
         </ul>
-        <a href="https://rohmsteuerberatung.typeform.com/to/V37TVY" target="_blank" class="lcard-link">Anfrage stellen →</a>
+        <a href="bpo.html" class="lcard-link">Mehr erfahren →</a>
       </div>
       <div class="lcard fade fade-d1">
         <div class="lcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
@@ -719,7 +841,7 @@ footer{background:#1e1f27;padding:56px 32px 28px}
           <li>Vermögensverwaltende Gesellschaften</li>
           <li>Immobiliensteuerrecht</li>
         </ul>
-        <a href="https://rohmsteuerberatung.typeform.com/to/V37TVY" target="_blank" class="lcard-link">Anfrage stellen →</a>
+        <a href="gestaltungsberatung.html" class="lcard-link">Mehr erfahren →</a>
       </div>
       <div class="lcard fade fade-d2">
         <div class="lcard-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
@@ -735,7 +857,7 @@ footer{background:#1e1f27;padding:56px 32px 28px}
           <li>Vorweggenommene Erbfolge</li>
           <li>Familienstiftungen</li>
         </ul>
-        <a href="https://rohmsteuerberatung.typeform.com/to/V37TVY" target="_blank" class="lcard-link">Anfrage stellen →</a>
+        <a href="nachfolgeplanung.html" class="lcard-link">Mehr erfahren →</a>
       </div>
     </div>
   </div>

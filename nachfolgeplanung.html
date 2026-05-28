@@ -166,18 +166,83 @@ footer{background:#1e1f27;padding:56px 32px 28px}
 .fade.visible{opacity:1;transform:none}
 .fade-d1{transition-delay:.1s}.fade-d2{transition-delay:.2s}.fade-d3{transition-delay:.3s}
 
+/* ── TABLET ── */
 @media(max-width:1024px){
-  .page-hero-inner{grid-template-columns:1fr}.hero-stats{display:none}
-  .ld-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr 1fr}
-  .process-steps::before{display:none}.why-grid{grid-template-columns:1fr 1fr}
-  .cta-inner{grid-template-columns:1fr}.cta-actions{align-items:flex-start}
-  .footer-top{grid-template-columns:1fr 1fr}
+  .page-hero-inner{grid-template-columns:1fr}
+  .hero-stats{display:none}
+  .ld-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .process-steps::before{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .cta-inner{grid-template-columns:1fr}
+  .cta-actions{align-items:flex-start}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
 }
+
+/* ── MOBILE ── */
 @media(max-width:768px){
-  .nav-center,.nav-phone{display:none}.hamburger{display:flex}
-  section{padding:56px 20px}.page-hero{padding:calc(var(--nav-h)+40px) 20px 56px}
-  .why-grid{grid-template-columns:1fr}.process-steps{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}.topbar{flex-direction:column;gap:8px;padding:10px 16px}
+  :root{--nav-h:64px}
+  .nav-center,.nav-phone{display:none}
+  .hamburger{display:flex}
+  .nav-inner{padding:0 16px}
+  .nav-logo img{height:32px}
+  .topbar{flex-direction:column;gap:6px;padding:8px 16px;text-align:center}
+  .topbar-text{display:none}
+
+  section{padding:48px 16px}
+
+  /* Hero */
+  .page-hero{padding:calc(var(--nav-h) + 36px) 16px 48px}
+  .page-hero h1{font-size:1.85rem;line-height:1.12;margin-bottom:14px}
+  .page-hero-desc{font-size:14.5px;margin-bottom:24px;color:rgba(255,255,255,0.65)}
+  .page-eyebrow{font-size:10px;margin-bottom:14px}
+  .breadcrumb{font-size:11px;margin-bottom:14px}
+  .hero-cta-group{flex-direction:column;align-items:stretch;gap:10px}
+  .btn-primary{justify-content:center;padding:13px 20px;font-size:14px}
+  .btn-outline{justify-content:center;border-bottom:none;color:rgba(255,255,255,0.5);font-size:13px}
+
+  /* Section text */
+  .section-title{font-size:1.6rem}
+  .section-sub{font-size:14.5px;max-width:100%}
+  .section-label{font-size:10px}
+
+  /* Leistungen */
+  .ld-grid{grid-template-columns:1fr;gap:32px}
+  .ld-list li{flex-direction:column;gap:8px}
+  .ld-list-icon{flex-shrink:0}
+
+  /* Sticky aside card */
+  div[style*="position:sticky"]{position:relative!important;top:auto!important}
+
+  /* Process */
+  .process-steps{grid-template-columns:1fr;gap:20px}
+  .process-steps::before{display:none}
+  .pstep-num{width:44px;height:44px;font-size:1.1rem}
+
+  /* Why */
+  .why-grid{grid-template-columns:1fr;gap:12px}
+  .why-card{padding:20px}
+
+  /* FAQ */
+  .faq-q{font-size:14px;padding:16px 18px}
+  .faq-a{padding:0 18px 16px;font-size:13.5px}
+
+  /* CTA band */
+  .cta-band{padding:52px 16px}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .cta-actions{align-items:stretch}
+  .btn-cta-big{justify-content:center;font-size:15px;padding:15px 24px}
+  .cta-note{text-align:center}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+  footer{padding:40px 16px 24px}
+}
+
+@media(max-width:480px){
+  .page-hero h1{font-size:1.6rem}
+  .why-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
