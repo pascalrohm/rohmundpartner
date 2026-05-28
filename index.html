@@ -46,7 +46,8 @@ nav.raised{box-shadow:0 2px 20px rgba(43,44,54,0.08)}
   max-width:var(--max);margin:0 auto;padding:0 32px;height:100%;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.nav-logo img{height:38px;width:auto;display:block}
+.nav-logo{flex-shrink:0}
+.nav-logo img{height:38px;width:auto;display:block;flex-shrink:0}
 .nav-center{display:flex;align-items:center;gap:2px;list-style:none}
 .nav-center > li{position:relative}
 .nav-center > li > a,
@@ -512,7 +513,7 @@ footer{background:#1e1f27;padding:56px 32px 28px}
   .nav-center,.nav-phone{display:none}
   .hamburger{display:flex}
   .nav-inner{padding:0 16px}
-  .nav-logo img{height:28px;width:auto;display:block}
+  .nav-logo img{height:28px;width:auto;display:block;flex-shrink:0}
 
   /* Topbar */
 
@@ -661,19 +662,25 @@ footer{background:#1e1f27;padding:56px 32px 28px}
 /* ─── KARRIERE-BAR ─── */
 .karriere-bar{
   position:sticky;top:0;z-index:102;
-  background:var(--red);padding:9px 32px;
-  display:flex;align-items:center;justify-content:center;gap:16px;
+  background:var(--dark);padding:9px 32px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
 }
-.karriere-bar-text{font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.85)}
-.karriere-bar-text strong{color:#fff;font-weight:700}
+.karriere-bar-text{font-size:12.5px;font-weight:500;color:rgba(255,255,255,0.75)}
+.karriere-bar-text strong{color:#fff;font-weight:600}
+.karriere-bar-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;
+  box-shadow:0 0 0 0 rgba(194,4,45,0.5);
+  animation:dot-pulse 2s ease infinite;
+}
+@keyframes dot-pulse{0%,100%{box-shadow:0 0 0 0 rgba(194,4,45,0.5)}60%{box-shadow:0 0 0 6px rgba(194,4,45,0)}}
 .karriere-bar-btn{
   display:inline-flex;align-items:center;gap:6px;
-  background:#fff;color:var(--red);
+  background:var(--red);color:#fff;
   font-size:11.5px;font-weight:700;letter-spacing:0.04em;
   padding:4px 14px;border-radius:100px;
-  transition:opacity 0.2s;white-space:nowrap;
+  transition:background 0.2s;white-space:nowrap;
 }
-.karriere-bar-btn:hover{opacity:0.88}
+.karriere-bar-btn:hover{background:var(--red-h)}
 .karriere-bar-btn svg{width:11px;height:11px;stroke:currentColor;flex-shrink:0}
 @keyframes footer-pulse{0%,100%{box-shadow:0 0 0 0 rgba(194,4,45,0.5)}60%{box-shadow:0 0 0 10px rgba(194,4,45,0)}}
 .footer-jobs-btn{
@@ -690,12 +697,23 @@ footer{background:#1e1f27;padding:56px 32px 28px}
   .karriere-bar{padding:8px 16px;gap:10px;flex-wrap:wrap;text-align:center}
   .karriere-bar-text{font-size:11.5px}
 }
+
+/* ─── MOBILE: Fixed header stack ─── */
+@media(max-width:768px){
+  .karriere-bar{position:fixed!important;top:0;left:0;right:0;z-index:102}
+  nav{position:fixed!important;top:36px;left:0;right:0;z-index:100}
+  body{padding-top:100px}
+  .mobile-menu{top:100px!important}
+}
+
+@media(max-width:1100px){.nav-center,.nav-phone{display:none}.hamburger{display:flex}}
 </style>
 </head>
 <body>
 
 <!-- KARRIERE-BAR -->
 <div class="karriere-bar">
+  <div class="karriere-bar-dot"></div>
   <span class="karriere-bar-text"><strong>Wir stellen ein!</strong> Steuerberater, Steuerfachangestellte &amp; duale Studenten.</span>
   <a href="karriere.html" class="karriere-bar-btn">
     Offene Stellen
@@ -1162,48 +1180,6 @@ footer{background:#1e1f27;padding:56px 32px 28px}
 </div>
 
 
-<!-- NEWS (POELLATH-inspired) -->
-<section class="news" id="news">
-  <div class="section-inner">
-    <div class="news-header">
-      <div>
-        <span class="section-label">Aktuelles</span>
-        <h2 class="section-title">Steuerrecht &amp; Kanzleinews.</h2>
-      </div>
-      <a href="#" class="news-more">Alle Beiträge →</a>
-    </div>
-    <div class="news-grid">
-      <div class="ncard fade">
-        <div class="ncard-body">
-          <span class="ncard-cat">Steuerrecht</span>
-          <div class="ncard-date">Mai 2025</div>
-          <div class="ncard-title">Jahressteuergesetz 2025: Was Unternehmen jetzt wissen müssen</div>
-          <p class="ncard-excerpt">Das Jahressteuergesetz 2025 bringt wesentliche Änderungen für GmbHs und Personengesellschaften. Unsere Analyse der relevanten Punkte für Ihr Unternehmen.</p>
-          <a href="#" class="ncard-link">Weiterlesen →</a>
-        </div>
-      </div>
-      <div class="ncard fade fade-d1">
-        <div class="ncard-body">
-          <span class="ncard-cat">Gestaltungsberatung</span>
-          <div class="ncard-date">April 2025</div>
-          <div class="ncard-title">Holding-Strukturen: Wann lohnt sich die Gründung einer vermögensverwaltenden GmbH?</div>
-          <p class="ncard-excerpt">Unter welchen Voraussetzungen ist eine Holdingstruktur steuerlich sinnvoll? Wir erläutern die wesentlichen Entscheidungskriterien.</p>
-          <a href="#" class="ncard-link">Weiterlesen →</a>
-        </div>
-      </div>
-      <div class="ncard fade fade-d2">
-        <div class="ncard-body">
-          <span class="ncard-cat">Nachfolgeplanung</span>
-          <div class="ncard-date">März 2025</div>
-          <div class="ncard-title">Familiengesellschaften als Instrument der vorweggenommenen Erbfolge</div>
-          <p class="ncard-excerpt">GmbH &amp; Co. KG und Familiengesellschaften ermöglichen eine steueroptimale Vermögensübertragung. Eine strukturierte Übersicht der Gestaltungsmöglichkeiten.</p>
-          <a href="#" class="ncard-link">Weiterlesen →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- KONTAKT -->
 <section class="kontakt" id="kontakt">
   <div class="kontakt-inner">
@@ -1264,9 +1240,7 @@ footer{background:#1e1f27;padding:56px 32px 28px}
       <div class="fcol">
         <h5>Kanzlei</h5>
         <ul>
-          <li><a href="#kanzlei">Über uns</a></li>
           <li><a href="partner.html">Die Partner</a></li>
-          <li><a href="kundenportal.html">Digitale Kanzlei</a></li>
           <li><a href="kundenportal.html">Kundenportal</a></li>
           <li><a href="karriere.html">Karriere</a></li>
         </ul>
@@ -1283,9 +1257,8 @@ footer{background:#1e1f27;padding:56px 32px 28px}
     <div class="footer-bottom">
       <p>&copy; 2025 Rohm &amp; Partner Steuerberatungsgesellschaft mbB</p>
       <div class="footer-legal">
-        <a href="https://rohm-stb.de/impressum">Impressum</a>
-        <a href="https://rohm-stb.de/datenschutzerklaerung">Datenschutz</a>
-        <a href="https://rohm-stb.de/agb">AGB</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </div>
